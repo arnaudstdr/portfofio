@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.O">
+    <title>{% block title %}Mon Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'portfolio/static/portfolio/css/style.css %}">
+</head> 
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                <li><a href="{% url 'project_list' %}">Projets</a></li>
+                <li><a href="{% url 'skill_list' %}">Compétences</a></li>
+                <li><a href="{% url 'desired_project_list' %}">Projets recherchés</a></li>
+                <li><a href="{% url 'about' %}">À propos</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Contenu spécifique à chaque page -->
+         {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

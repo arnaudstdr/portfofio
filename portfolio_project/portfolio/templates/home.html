@@ -1,0 +1,11 @@
+{% extends 'portfolio/templates/base.html %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Bienvenue sur mon Portfolio</h1>
+    <p>Découvrez mes projets, mes compétences et les types de projets que je recherche.</p>
+    <a href="{% url 'project_list' %}" class="btn">Voir mes projets</a>
+</section>
+{% endblock %}

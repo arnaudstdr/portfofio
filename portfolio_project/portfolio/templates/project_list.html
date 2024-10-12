@@ -1,0 +1,16 @@
+{% extends 'portfolio/templates/base.html %}
+
+{% block title %}Projets{% endblock %}
+
+{% block content %}
+
+{% for project in projects %}
+    <div class="project">
+        <img src="{{ project.image.url }}" alt="Image of {{ project.title }}">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description|truncatewords:20 }}</p>
+        <a href="{% url 'project_detail' project.id %}">Voir plus</a>
+    </div>
+{% endfor %}
+
+{% endblock %}
