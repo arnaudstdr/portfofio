@@ -1,0 +1,12 @@
+{% extends 'portfolio/templates/base.html %}
+
+{% block title %}Compétences{% endblock %}
+
+{% block content %}
+<h2>Compétences</h2>
+<ul>
+    {% for skill in skills%}
+        <li>{{ skill.name }} - Niveau : {{ skill.level }}</li>
+    {{ endfor }}
+</ul>
+{% endblock %}

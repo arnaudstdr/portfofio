@@ -1,0 +1,14 @@
+{% extends 'portfolio/templates/base.html %}
+
+{% block title %}Détail de projets{% endblock %}
+
+{% block content %}
+<h1>{{ project.title }}</h1>
+<img src="{{ project.image.url }}" alt="Image of {{ project.title }}">
+<p>{{ project.description }}</p>
+<p><strong>Technologies :</strong> {{ project.technologies }}</p>
+<a href="{{ project.project_link }}" target="_blank">Voir le code</a>
+{% if project.demo_link %}
+    <a href="{{ project.demo_link }}" target="_blank">Voir la démonstration</a>
+{% endif%}
+{% endblock %}

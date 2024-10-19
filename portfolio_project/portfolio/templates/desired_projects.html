@@ -1,0 +1,21 @@
+{% extends 'portfolio/templates/base.html %}
+
+{% block title %}Projets Recherché{% endblock %}
+
+{% block content %}
+<h2>Projets recherchés</h2>
+<ul>
+    {% for project in desired_projects %}
+        <li>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.desccription }}</p>
+            <p>Compétences requises :
+                {% for skill in project.required_skills.all %}
+                    {{ skill.name }}
+                {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock%}

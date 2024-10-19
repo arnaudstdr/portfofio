@@ -1,0 +1,30 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <h1>Me contacter</h1>
+    <p>Si vous avez des questions ou souhaitez discuter d'un projet, n'hésitez pas à me contacter en remplissant le formulaire ci-dessous.</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name">Nom</label>
+            {{ form.name }}
+        </div>
+        
+        <div class="form-group">
+            <label for="id_email">Email</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_message">Message</label>
+            {{ form.message }}
+        </div>
+
+        <button type="submit" class="btn">Envoyer</button>
+    </form>
+</section>
+{% endblock %}
