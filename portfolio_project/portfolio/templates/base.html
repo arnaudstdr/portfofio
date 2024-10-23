@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.O">
     <title>{% block title %}Mon Portfolio{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'portfolio/static/portfolio/css/style.css %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
 </head> 
 <body>
     <header>
@@ -27,7 +28,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        <p>&copy; 2024 Arnaud Stadler. Tous droits réservés.</p>
     </footer>
 </body>
 </html>

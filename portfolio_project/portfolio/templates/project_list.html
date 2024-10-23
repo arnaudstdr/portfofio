@@ -1,9 +1,9 @@
-{% extends 'portfolio/templates/base.html %}
+{% extends 'base.html' %}
 
 {% block title %}Projets{% endblock %}
 
 {% block content %}
-
+<h2>Projets</h2>
 {% for project in projects %}
     <div class="project">
         <img src="{{ project.image.url }}" alt="Image of {{ project.title }}">
