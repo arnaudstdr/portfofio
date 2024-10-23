@@ -3,6 +3,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -29,16 +38,79 @@ header nav ul li a {
 
 main {
     padding: 2rem;
+    flex: 1;
 }
 
 footer {
+    text-align: center;
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 1rem;
-    position: fixed;
     width: 100%;
-    bottom: 0;
+}
+
+a {
+    color: #007bff;  /* Assure-toi que la couleur est visible */
+    text-decoration: underline;
+}
+
+.projects-container {
+    display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+}
+
+.project-card {
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.project-card h2 {
+    margin-top: 0;
+}
+
+.project-card ul {
+    padding-left: 20px;
+}
+
+.project-card a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.project-card a:hover {
+    background-color: #0056b3;
+}
+
+.project-card img {
+    width: 80%; /* Ajuste cette valeur selon la taille désirée */
+    height: auto; /* Garde le ratio d'aspect de l'image */
+    display: block;
+    margin: 0 auto; /* Centre l'image horizontalement */
+    border-radius: 4px; /* Optionnel, pour arrondir légèrement les bords */
 }
 
 .hero {
@@ -118,4 +190,10 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+    }
 }

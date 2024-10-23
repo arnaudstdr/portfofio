@@ -6,8 +6,7 @@ class Project(models.Model):
     description = models.TextField()
     technologies = models.TextField(max_length=200)
     project_link = models.URLField(max_length=200)
-    demo_link = models.URLField(max_length=200, blank=True, null=False)
-    image = models.ImageField(upload_to='project_images/', blank=True, null=False)
+    image = models.ImageField(upload_to='projects/', blank=True, null=False)
 
     def __str__(self):
         return self.title

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Project, Skills, DesiredProject, About
 from .forms import ContactForm
 from django.core.mail import send_mail
@@ -9,10 +9,12 @@ def home(request):
 
 def project_list(request):
     projects = Project.objects.all()
+    for project in projects:
+        project.technology_list = project.technologies.split(' - ')
     return render(request, 'project_list.html', {'projects': projects})
 
 def project_detail(request, pk):
-    project = Project.objects.get(id=pk)
+    project = get_object_or_404(Project, pk=pk)
     return render(request, 'project_detail.html', {'project': project})
 
 def skill_list(request):
